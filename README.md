@@ -37,6 +37,9 @@
 
 ---
 
+## 🗺️ Моя дорожная карта до Middle
+
+```mermaid
 graph TD
     subgraph СТАРТ["🌟 СТАРТ: Я здесь"]
         Start["Я — системный аналитик в промышленности<br>(MES, SAP, АСУ ТП, ISA-95)"]
@@ -114,3 +117,4 @@ graph TD
     style Alt1 fill:#fee2e2,stroke:#991b1b,stroke-width:1px,color:#7f1d1d
     style Alt2 fill:#fee2e2,stroke:#991b1b,stroke-width:1px,color:#7f1d1d
     style Alt3 fill:#fee2e2,stroke:#991b1b,stroke-width:1px,color:#7f1d1d
+```
