@@ -106,7 +106,7 @@ graph TD
 
 ## 📜 Сертификаты и курсы
 
-[![Сертификат по SQL](certificates/Сертификат%20SQL.jpg)](https://stepik.org/cert/3319607)
+[![Сертификат по SQL]certificates/stepik-certificate-63054-5fb0fa5.pdf)]
 
 **[Интерактивный тренажер по SQL](https://stepik.org/cert/3319607)** — Stepik, 2026  
 *Подтверждает навыки: JOIN, оконные функции, CTE, сложные аналитические запросы.*
