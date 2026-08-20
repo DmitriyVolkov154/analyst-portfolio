@@ -1,0 +1,177 @@
+{
+  "info": {
+    "_postman_id": "94474e09-6dac-49cb-a2a3-0b986c6210c4",
+    "name": "Редактирования продолжительности рабочего дня",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24148966"
+  },
+  "item": [
+    {
+      "name": "https://lawyer.softwarecenter.ru/api/v1/application",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "ru,en;q=0.9,zh;q=0.8"
+          },
+          {
+            "key": "app-sec",
+            "value": "miEKYhef99qNT8725auJmOzXKJdkZGJPjlTFJxpc9yDO4V9qukiAyhsYKSKH69PTFsvj1ZSIVxpnwFVJKAeUuSeV1RkOaeNMS5Kb0ajGmmanKdAeE7aNXqK6ixIZqsSBNYQmiZQAsXkAjcvjTy84EMCO2eAb6H261V81e7w0ecYDUc10V8Eerl60cUjwmnVEKTY1s2k0z358st0MiNGh089KYMVOLfnxe9nSQGBacicjsNBg35W39DGS8Vyn7CZ"
+          },
+          {
+            "key": "authorization",
+            "value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2xhd3llci5zb2Z0d2FyZWNlbnRlci5ydS9hcGkvdjEvYXV0aC9sb2dpbi9jb21wbGV0ZSIsImlhdCI6MTc2NjIxMzQ0NCwiZXhwIjoxODUyNjEzNDQ0LCJuYmYiOjE3NjYyMTM0NDQsImp0aSI6ImVGSk9pNmNtbmRiY2hZMk8iLCJzdWIiOiI0MSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ZGMcBQO0WmCIePp_RhcnbbKBs9K2ISeOi-lfYV04gMg"
+          },
+          {
+            "key": "origin",
+            "value": "https://lawyer.front.softwarecenter.ru"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://lawyer.front.softwarecenter.ru/"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"YaBrowser\";v=\"25.10\", \"Yowser\";v=\"2.5\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-site"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 YaBrowser/25.10.0.0 Safari/537.36"
+          }
+        ],
+        "url": {
+          "raw": "https://lawyer.softwarecenter.ru/api/v1/application",
+          "protocol": "https",
+          "host": [
+            "lawyer",
+            "softwarecenter",
+            "ru"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "application"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://lawyer.softwarecenter.ru/api/v1/user/work-day",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "accept-language",
+            "value": "ru,en;q=0.9,zh;q=0.8"
+          },
+          {
+            "key": "app-sec",
+            "value": "miEKYhef99qNT8725auJmOzXKJdkZGJPjlTFJxpc9yDO4V9qukiAyhsYKSKH69PTFsvj1ZSIVxpnwFVJKAeUuSeV1RkOaeNMS5Kb0ajGmmanKdAeE7aNXqK6ixIZqsSBNYQmiZQAsXkAjcvjTy84EMCO2eAb6H261V81e7w0ecYDUc10V8Eerl60cUjwmnVEKTY1s2k0z358st0MiNGh089KYMVOLfnxe9nSQGBacicjsNBg35W39DGS8Vyn7CZ"
+          },
+          {
+            "key": "authorization",
+            "value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2xhd3llci5zb2Z0d2FyZWNlbnRlci5ydS9hcGkvdjEvYXV0aC9sb2dpbi9jb21wbGV0ZSIsImlhdCI6MTc2NjIxMzQ0NCwiZXhwIjoxODUyNjEzNDQ0LCJuYmYiOjE3NjYyMTM0NDQsImp0aSI6ImVGSk9pNmNtbmRiY2hZMk8iLCJzdWIiOiI0MSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ZGMcBQO0WmCIePp_RhcnbbKBs9K2ISeOi-lfYV04gMg"
+          },
+          {
+            "key": "content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "origin",
+            "value": "https://lawyer.front.softwarecenter.ru"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://lawyer.front.softwarecenter.ru/"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"YaBrowser\";v=\"25.10\", \"Yowser\";v=\"2.5\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-site"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 YaBrowser/25.10.0.0 Safari/537.36"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"start_working_time\":\"09:00\",\"end_working_time\":\"20:00\",\"working_time_interval\":60}"
+        },
+        "url": {
+          "raw": "https://lawyer.softwarecenter.ru/api/v1/user/work-day",
+          "protocol": "https",
+          "host": [
+            "lawyer",
+            "softwarecenter",
+            "ru"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "user",
+            "work-day"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
