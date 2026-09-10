@@ -1,0 +1,9 @@
+{
+  "event_id": "evt-123456",
+  "event_type": "PaymentSucceeded",
+  "occurred_at": "2026-01-01T12:00:00Z",
+  "payment_id": "pay-987654",
+  "order_id": "order-100001",
+  "amount": 4990,
+  "currency": "RUB"
+}
