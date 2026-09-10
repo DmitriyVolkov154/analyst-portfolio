@@ -1,15 +1,17 @@
-# Kafka Payment Flow
+# Асинхронный поток оплаты через Kafka
 
+```text
 Payment Service -> PaymentSucceeded -> Kafka -> Order Service
+```
 
-## Recovery scenario
+## Сценарий восстановления
 
-If Order Service is temporarily unavailable, events remain in Kafka until the consumer recovers. After recovery, Order Service processes the backlog.
+Если Order Service временно недоступен, события остаются в Kafka до восстановления consumer. После восстановления Order Service обрабатывает накопившиеся события.
 
-## Duplicate scenario
+## Сценарий повторной доставки
 
-Kafka may deliver an event more than once. `event_id` and `processed_events` are used to prevent repeated business effects.
+Kafka может доставить одно событие более одного раза. Для защиты от повторного выполнения бизнес-операции используются `event_id` и таблица `processed_events`.
 
-## Atomic processing
+## Атомарная обработка
 
-The order status update and insertion into `processed_events` are committed in one transaction.
+Изменение статуса заказа и запись события в `processed_events` фиксируются в одной транзакции. Это позволяет избежать ситуации, когда статус заказа изменён, но факт обработки события не сохранён, или наоборот.
