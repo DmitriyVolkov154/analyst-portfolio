@@ -1,11 +1,25 @@
-# Order Lifecycle
+# Жизненный цикл заказа
 
+```text
 CREATED -> RESERVED -> PAID -> IN_DELIVERY -> DELIVERED -> RECEIVED
+```
 
-Alternative terminal state: RESERVED -> CANCELLED.
+Альтернативное конечное состояние:
 
-After PAID, cancellation starts a refund process.
+```text
+RESERVED -> CANCELLED
+```
 
-Important distinction:
-- DELIVERED = order physically delivered to pickup point or address.
-- RECEIVED = customer actually received/picked up the order.
+После `PAID` отмена заказа запускает процесс возврата денежных средств.
+
+## Значение состояний
+
+- `CREATED` — заказ создан.
+- `RESERVED` — товар зарезервирован.
+- `PAID` — оплата подтверждена.
+- `IN_DELIVERY` — заказ передан в службу доставки.
+- `DELIVERED` — заказ физически доставлен в пункт выдачи или по адресу.
+- `RECEIVED` — покупатель фактически получил или забрал заказ.
+- `CANCELLED` — заказ отменён.
+
+**Важно:** `DELIVERED` и `RECEIVED` — разные состояния. Доставка заказа не означает, что покупатель уже его получил.
