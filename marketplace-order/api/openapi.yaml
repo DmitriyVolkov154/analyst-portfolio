@@ -1,0 +1,98 @@
+openapi: 3.0.3
+info:
+  title: Marketplace Order API
+  version: 1.0.0
+  description: Учебный API-контракт процесса заказа.
+servers:
+  - url: https://api.example.com
+paths:
+  /orders:
+    post:
+      summary: Создать заказ
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrderRequest'
+      responses:
+        '201':
+          description: Заказ создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '409':
+          description: Недостаточно товара для резервирования
+  /orders/{orderId}/payment:
+    post:
+      summary: Инициировать оплату
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: Idempotency-Key
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '202':
+          description: Платёж принят в обработку
+        '409':
+          description: Заказ уже оплачен или недоступен для оплаты
+  /orders/{orderId}:
+    get:
+      summary: Получить заказ
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Заказ найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '404':
+          description: Заказ не найден
+components:
+  schemas:
+    CreateOrderRequest:
+      type: object
+      required: [customerId, items]
+      properties:
+        customerId:
+          type: integer
+        items:
+          type: array
+          items:
+            type: object
+            required: [productId, quantity]
+            properties:
+              productId:
+                type: integer
+              quantity:
+                type: integer
+                minimum: 1
+        deliveryAddress:
+          type: string
+    Order:
+      type: object
+      required: [orderId, customerId, status, totalAmount]
+      properties:
+        orderId:
+          type: integer
+        customerId:
+          type: integer
+        status:
+          type: string
+          enum: [CREATED, RESERVED, PAID, IN_DELIVERY, DELIVERED, RECEIVED, CANCELLED]
+        totalAmount:
+          type: number
+          format: double
